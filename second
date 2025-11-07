@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Movie Date – The Sequel 🎬💕</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #222;
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      max-width: 450px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    img {
+      border-radius: 15px;
+      width: 100%;
+      max-width: 320px;
+      margin-top: 20px;
+    }
+    h2 {
+      color: #1d3557;
+    }
+    p {
+      font-size: 1.1em;
+      margin-top: 15px;
+    }
+    .button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #1d3557;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #457b9d;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #444;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🎞️ Our Movie Date — The Sequel</h2>
+
+    <p>Scene 4: You said yes — now there’s no turning back! 🚀<br>
+    Scene 5: Prepare for Mission: Possible — Operation Date Night. 🍿💥<br>
+    Scene 6: Romance, chaos, and maybe dessert. 🍰❤️</p>
+
+    <!-- Replace with your own image -->
+    <img src="https://yourusername.github.io/movie-date/img1.jpg" alt="The Sequel Image" />
+
+    <div class="footer">— A production by Us 💘</div>
+  </div>
+
+</body>
+</html>
