@@ -55,7 +55,7 @@
 			opacity: 0;
 			transform: translateY(50px);
 			animation: slideUp 1s ease forwards;
-			animation-delay: 6s;  /* show after image */
+			animation-delay: 6s;
 			font-style: italic;
 			margin-top: 30px;
 		}
@@ -75,7 +75,7 @@
 		}
   </style>
 </head>
-<body onclick="playMusic()" style="cursor:pointer;">
+<body>
     <div class="card">
         <h2>🎞️ Our Movie Date</h2>
 
@@ -84,29 +84,31 @@
 		<p>Scene 3: Credits roll — “Best Couple Ever” 🎬❤️</p>
         <p>So… wanna make this movie happen?” 🎥✨</p>
 
-        <!-- Replace the image below with your own link -->
         <img src="https://andreiz98.github.io/myRepo/img.jpg" alt="Movie Date Image">
 
         <div class="footer">— Written, directed, and starring: Us 💕</div>
     </div>
 	
-	<div id="music"></div>
+	<audio autoplay loop id="bg-music">
+	  <source src="https://andreiz98.github.io/myRepo/music.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
 
-  <script>
-    function playMusic() {
-      const iframe = document.createElement("iframe");
-      iframe.width = "0";
-      iframe.height = "0";
-      iframe.src = "https://www.youtube.com/embed/es3whnk66LM?autoplay=1&loop=1&playlist=es3whnk66LM&mute=1";
-      iframe.frameBorder = "0";
-      iframe.allow = "autoplay; encrypted-media";
-      iframe.allowFullscreen = true;
-      document.getElementById("music").appendChild(iframe);
+	<script>
+	  const audio = document.getElementById('bg-music');
+	  audio.volume = 0;
 
-      document.body.onclick = null; // only run once
-    }
-  </script>
+	  // Gradually increase volume
+	  const fadeIn = setInterval(() => {
+		if (audio.volume < 0.2) {
+		  audio.volume = Math.min(audio.volume + 0.02, 0.2); // fade to 20%
+		} else {
+		  clearInterval(fadeIn);
+		}
+	  }, 300);
+	</script>
 	
 </body>
 </html>
+
 
