@@ -118,18 +118,24 @@
     function startMusic() {
       audio.play().then(() => {
         fadeInMusic();
-        movieTitle.style.opacity = 1; // reveal title
+        movieTitle.style.opacity = 1;
         overlay.style.display = 'none';
       }).catch(() => {
-        // Mobile autoplay blocked: show overlay for user tap
         overlay.style.display = 'block';
       });
     }
+	  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startMusic();
+          observer.unobserve(movieTitle);
+        }
+      });
+    }, { threshold: 0 }); // trigger at first pixel
 
-    // Try autoplay immediately
-    startMusic();
+    observer.observe(movieTitle);
 
-    // Mobile fallback: user tap triggers music
     overlay.addEventListener('click', () => {
       startMusic();
     });
@@ -137,4 +143,3 @@
 	
 </body>
 </html>
-
