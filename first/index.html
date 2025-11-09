@@ -31,10 +31,10 @@
 		}
 
 		h2 { animation-delay: 0.2s; }
-		  p:nth-of-type(1) { animation-delay: 1s; }
-		  p:nth-of-type(2) { animation-delay: 2s; }
-		  p:nth-of-type(3) { animation-delay: 3s; }
-		  p:nth-of-type(4) { animation-delay: 4s; }
+		p:nth-of-type(1) { animation-delay: 1s; }
+		p:nth-of-type(2) { animation-delay: 4s; }
+		p:nth-of-type(3) { animation-delay: 7s; }
+		p:nth-of-type(4) { animation-delay: 10s; }
 		  
 		@keyframes slideUp {
 		  0% { opacity: 0; transform: translateY(50px); }
@@ -48,14 +48,14 @@
 		  opacity: 0;
 		  transform: scale(0.9);
 		  animation: fadeIn 1s ease forwards;
-		  animation-delay: 5s;
+		  animation-delay: 13s;
 		}
 		
 		.footer {
 			opacity: 0;
 			transform: translateY(50px);
 			animation: slideUp 1s ease forwards;
-			animation-delay: 6s;
+			animation-delay: 16s;
 			font-style: italic;
 			margin-top: 30px;
 		}
@@ -136,11 +136,16 @@
       }, 50);
       audio.play().then(() => fadeInMusic())
            .catch(() => console.log("Autoplay blocked, user interaction needed"));
-    });
+      setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+		}, 45000);
+	});
   </script>
 	
 </body>
 </html>
+
 
 
 
