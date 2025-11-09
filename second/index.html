@@ -31,9 +31,9 @@
 
 		h2 { animation-delay: 0.2s; }
 		p:nth-of-type(1) { animation-delay: 1s; }
-		p:nth-of-type(2) { animation-delay: 2s; }
-		p:nth-of-type(3) { animation-delay: 3s; }
-		p:nth-of-type(4) { animation-delay: 4s; }
+		p:nth-of-type(2) { animation-delay: 4s; }
+		p:nth-of-type(3) { animation-delay: 7s; }
+		p:nth-of-type(4) { animation-delay: 10s; }
 		  
 		@keyframes slideUp {
 		  0% { opacity: 0; transform: translateY(50px); }
@@ -47,14 +47,14 @@
 		  opacity: 0;
 		  transform: scale(0.9);
 		  animation: fadeIn 1s ease forwards;
-		  animation-delay: 5s;
+		  animation-delay: 13s;
 		}
 		
 		.footer {
 			opacity: 0;
 			transform: translateY(50px);
 			animation: slideUp 1s ease forwards;
-			animation-delay: 6s;  /* show after image */
+			animation-delay: 16s;
 			font-style: italic;
 			margin-top: 30px;
 		}
@@ -88,7 +88,7 @@
 	    cursor:pointer;
 	    z-index:10;
 		">
-	    <h2>🎞️ Let't Continue The Story...</h2>
+	    <h2>🎞️ Let's Continue The Story...</h2>
  	</div>
 	
   <div class="card" id="card" style="display:none; opacity:0; transition: opacity 1s;">
@@ -130,7 +130,11 @@
       }, 50);
       audio.play().then(() => fadeInMusic())
            .catch(() => console.log("Autoplay blocked, user interaction needed"));
-    });
+      setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+		}, 45000);
+	});
   </script>
 
 </body>
